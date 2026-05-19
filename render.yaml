@@ -1,0 +1,9 @@
+services:
+  - type: worker
+    name: yt-downloader-bot
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt
+      apt-get update && apt-get install -y ffmpeg
+    startCommand: python ytdownloader.py
+    plan: free
